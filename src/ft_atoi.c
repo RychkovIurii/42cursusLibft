@@ -6,15 +6,17 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 22:39:01 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/16 22:39:07 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/17 13:45:31 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_atoi(char *str)
+#include "libft.h"
+
+int	ft_atoi(const char *str)
 {
-	int result;
-	int sign;
-	int i;
+	int	result;
+	int	sign;
+	int	i;
 
 	result = 0;
 	sign = 1;
