@@ -6,7 +6,7 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:17:51 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/17 15:02:30 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/17 23:02:10 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,21 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
+	size_t src_len;
 
 	i = 0;
-	if (src == NULL || dst == NULL)
-		// i should think (strlen of src)
+	src_len = ft_strlen(src);
+	if (dstsize == 0)
+		return (src_len);
 	while (i < dstsize - 1 && src[i])
 	{
 		dst[i] = src[i];
 		i++;
 	}
 	dst[i] = '\0';
-	return (i);
+	return (src_len);
 }
-
+/* 
 #include <string.h>
 
 int main(void) {
@@ -47,17 +49,17 @@ int main(void) {
 	printf("ORIG Length of copied string: %zu\n\n", result2);
 
 	// Test case 2: src is NULL
-	printf("Test case 2: src is NULL\n");
-	result = ft_strlcpy(dst, NULL, sizeof(dst));
-	printf("Length of copied string: %zu\n\n", result);
-	result2 = strlcpy(dst2, NULL, sizeof(dst2));
-	printf("ORIG Length of copied string: %zu\n\n", result2);
+	//printf("Test case 2: src is NULL\n");
+	//result = ft_strlcpy(dst, NULL, sizeof(dst));
+	//printf("Length of copied string: %zu\n\n", result);
+	//result2 = strlcpy(dst2, NULL, sizeof(dst2));
+	//printf("ORIG Length of copied string: %zu\n\n", result2);
 
 	// Test case 3: dst is NULL
-	printf("Test case 3: dst is NULL\n");
+	/* printf("Test case 3: dst is NULL\n");
 	result = ft_strlcpy(NULL, src, sizeof(dst));
 	printf("Length of copied string: %zu\n\n", result);
 	result2 = strlcpy(NULL, src, sizeof(dst2));
 	printf("ORIG Length of copied string: %zu\n\n", result2);
-	return 0;
-}
+	return 0; */
+} */
