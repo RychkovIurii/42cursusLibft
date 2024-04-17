@@ -6,9 +6,11 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 14:18:26 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/16 17:44:08 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/17 13:46:03 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isdigit(int argument)
 {
