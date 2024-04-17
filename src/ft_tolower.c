@@ -10,6 +10,8 @@
 /*																			*/
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_tolower(int argument)
 {
 	if (argument > 64 && argument < 91)
