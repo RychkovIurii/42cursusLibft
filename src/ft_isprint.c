@@ -6,9 +6,11 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 17:45:39 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/16 18:31:49 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/17 13:46:12 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int argument)
 {
