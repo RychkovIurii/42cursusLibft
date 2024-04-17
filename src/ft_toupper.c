@@ -6,11 +6,13 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 21:55:08 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/16 22:07:59 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/17 13:49:57 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_toupper(int argument)
+#include "libft.h"
+
+int	ft_toupper(int argument)
 {
 	if (argument > 96 && argument < 123)
 		return (argument - 32);
