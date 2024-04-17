@@ -6,7 +6,7 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:17:51 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/17 23:02:10 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/17 23:03:44 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,10 @@ int main(void) {
 	//printf("ORIG Length of copied string: %zu\n\n", result2);
 
 	// Test case 3: dst is NULL
-	/* printf("Test case 3: dst is NULL\n");
+	printf("Test case 3: dst is NULL\n");
 	result = ft_strlcpy(NULL, src, sizeof(dst));
 	printf("Length of copied string: %zu\n\n", result);
 	result2 = strlcpy(NULL, src, sizeof(dst2));
 	printf("ORIG Length of copied string: %zu\n\n", result2);
-	return 0; */
+	return 0;
 } */
