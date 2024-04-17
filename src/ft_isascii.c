@@ -6,9 +6,11 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 16:50:06 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/16 17:43:17 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/17 13:45:54 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isascii(int argument)
 {
