@@ -6,7 +6,7 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 18:08:50 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/17 19:26:34 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/17 22:31:46 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,29 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
+	size_t i;
 	unsigned char	*ptr_s1;
 	unsigned char	*ptr_s2;
 
+	i = 0;
 	ptr_s1 = (unsigned char *)s1;
 	ptr_s2 = (unsigned char *)s2;
-	while (ptr_s1 && ptr_s2 && (ptr_s1 == ptr_s2) && n>0)
+	while (i < n)
 	{
-		n--;
-		ptr_s1++;
-		ptr_s2++;
+		if (ptr_s1[i] != ptr_s2[i])
+			return (ptr_s1[i] - ptr_s2[i]);
+		i++;
 	}
-	if ((n == 0) || (ptr_s1 == ptr_s2))
-		return (0);
-	else
-		//return (ptr_s1 - ptr_s2);
-		return (0);
+	return (0);
 }
 
 int	main(void)
 {
 	size_t	n;
-	char	str1[] = "abd\0";
-	char	str2[] = "abc\200";
+	char	str1[] = "\0";
+	char	str2[] = "\200";
 
 	n = 6;
-	//printf("%d", memcmp(str1, str2, n));
-	printf("%d", ft_memcmp(str1, str2, n));
+	printf("original = %d\n", memcmp(str1, str2, n));
+	printf("mine     = %d\n", ft_memcmp(str1, str2, n));
 }
