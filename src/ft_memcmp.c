@@ -6,7 +6,7 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 18:08:50 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/17 22:31:46 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/18 12:29:00 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t i;
+	size_t			i;
 	unsigned char	*ptr_s1;
 	unsigned char	*ptr_s2;
 
@@ -29,7 +29,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-
+/* 
 int	main(void)
 {
 	size_t	n;
@@ -39,4 +39,4 @@ int	main(void)
 	n = 6;
 	printf("original = %d\n", memcmp(str1, str2, n));
 	printf("mine     = %d\n", ft_memcmp(str1, str2, n));
-}
+} */
