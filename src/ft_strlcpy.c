@@ -6,7 +6,7 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:17:51 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/17 23:03:44 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/18 12:30:10 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
-	size_t src_len;
+	size_t	src_len;
 
 	i = 0;
 	src_len = ft_strlen(src);
