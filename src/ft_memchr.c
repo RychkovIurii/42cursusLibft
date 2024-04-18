@@ -6,7 +6,7 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 15:03:50 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/17 18:08:36 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/18 09:40:43 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,18 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*ptr_s;
+	size_t 			i;
 
+	i = 0;
 	ptr_s = (unsigned char *)s;
-	while (n)
+	while (i < n)
 	{
-		if (ptr_s[n] == (unsigned char)c)
+		if (ptr_s[i] == (unsigned char)c)
 		{
 			return (ptr_s);
 		}
 		ptr_s++;
-		n--;
+		i++;
 	}
 	return (NULL);
 }
@@ -32,11 +34,14 @@ void	*ft_memchr(const void *s, int c, size_t n)
 int main () {
 	const char str[] = "Hello.Hive.Five";
 	const char ch = '.';
-	char *ret;
+	char *result1;
+	char *result2;
 
-	ret = memchr(str, ch, strlen(str));
+	result1 = memchr(str, ch, strlen(str));
+	result2 = ft_memchr(str, ch, strlen(str));
 
-	printf("String after |%c| is - |%s|\n", ch, ret);
+	printf("String after |%c| is - |%s|\n", ch, result1);
+	printf("String after |%c| is - |%s|\n", ch, result2);
 
 	return(0);
 } */
