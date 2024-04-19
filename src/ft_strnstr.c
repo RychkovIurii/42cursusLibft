@@ -6,7 +6,7 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 11:17:38 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/18 19:53:05 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/19 09:32:19 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t i;
 
 	i = 0;
+	steps = 0;
 	ptr_haystack = (char *)haystack;
 	if (!(*needle))
 		return (ptr_haystack);
-	len_needle = ft_strlen(needle);
-	if (len == 0)
+	if (len == 0 || !(*haystack))
 		return (NULL);
-	steps = len - len_needle + 1;
-	while (*ptr_haystack && steps)
+	len_needle = ft_strlen(needle);
+	while (*ptr_haystack && steps <= len - len_needle)
 	{
 		while (ptr_haystack[i] == needle[i] && ptr_haystack[i] && needle[i] 
 				&& i < len)
@@ -36,7 +36,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 			return (ptr_haystack);
 		i = 0;
 		ptr_haystack++;
-		steps--;
+		steps++;
 	}
 	return (0);
 }
@@ -44,10 +44,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 int main () {
 	char haystack[20] = "Hello.Hive.Fivy";
 	char haystack2[20] = "\0";
-	char needle[10] = "H";
+	char needle[10] = "y";
 	char needle2[10] = ".Hi";
 	char needle3[10] = "\0";
-	size_t len = 14;
+	size_t len = 20;
 	size_t len2 = 1;
 	size_t len3 = 0;
 	char *result, *result3, *result5, *result7, *result8;
