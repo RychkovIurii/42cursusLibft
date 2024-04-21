@@ -6,9 +6,11 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:12:10 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/19 17:43:38 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/21 12:04:50 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -17,7 +19,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*result;
 
 	start = 0;
-	if (!s || !set)
+	if (!s1 || !set)
 		return (NULL);
 	end = ft_strlen(s1) + 1;
 	while (ft_strchr(set, s1[start]) && start <= end)
@@ -27,8 +29,23 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (ft_strchr(set, s1[end]) && end >= 0)
 		end--;
 	result = (char *)malloc(sizeof(char) * (end - start + 2));
-	if (!reult)
+	if (!result)
 		return (NULL);
 	ft_strlcpy(result, &s1[start], end - start + 2);
-	return (str);
+	return (result);
 }
+/* 
+int	main(void)
+{
+	char	str[30] = " - + -   Hello Hive + ";
+	char	str1[5] = "AB";
+	char	trim[7] = " -+";
+	char	trim1[7] = "BA";
+	char	*result;
+
+	result = ft_strtrim(str, trim);
+	printf("%s\n", result);
+	result = ft_strtrim(str1, trim1);
+	printf("%s\n", result);
+	free(result);
+} */
