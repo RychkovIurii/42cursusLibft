@@ -6,7 +6,7 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 12:05:53 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/21 15:09:13 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/21 15:34:05 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,10 @@ static void	free_array(char **array, size_t i)
 	free(array);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**ft_helper(char const *s, char c, size_t i, char **result)
 {
-	size_t			i;
 	const char	*start;
-	char		**result;
 
-	i = 0;
-	result = (char **)malloc(sizeof(char *) * (ft_strcounter(s, c) + 1));
-	if (!result || !s)
-		return (NULL);
 	while (*s)
 	{
 		if (*s && *s != c)
@@ -76,9 +70,21 @@ char	**ft_split(char const *s, char c)
 	return (result);
 }
 
+char	**ft_split(char const *s, char c)
+{
+	size_t		i;
+	char		**result;
+
+	i = 0;
+	result = (char **)malloc(sizeof(char *) * (ft_strcounter(s, c) + 1));
+	if (!result || !s)
+		return (NULL);
+	return (ft_helper(s, c, i, result));
+}
+/* 
 int	main(void)
 {
-	char	str[20] = "b";
+	char	str[20] = "b    hello hive ";
 	char	c = ' ';
 	size_t	counter;
 	char	**result;
@@ -95,4 +101,4 @@ int	main(void)
 		free(result);
 	}
 	return 0;
-}
+} */
