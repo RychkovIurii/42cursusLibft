@@ -6,13 +6,14 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 13:39:37 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/21 12:54:50 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/22 09:28:27 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>		// DELETE
 # include <string.h>	//DELETE
