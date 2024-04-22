@@ -6,17 +6,15 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 13:39:37 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/22 17:40:44 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/22 21:50:51 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>		// DELETE
-# include <string.h>	//DELETE
+# include <unistd.h>
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);

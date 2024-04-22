@@ -6,7 +6,7 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 15:04:48 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/22 17:31:58 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/22 22:22:37 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	unsigned char	*temp_dst;
 	unsigned char	*temp_src;
 
-	if (!dst && !src)
-		return (0);
 	temp_src = (unsigned char *)src;
 	temp_dst = (unsigned char *)dst;
 	if (temp_src < temp_dst)

@@ -6,7 +6,7 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 09:14:02 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/18 10:08:14 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/22 23:16:28 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,20 @@ char	*ft_strchr(const char *s, int c)
 	char	*ptr_s;
 
 	ptr_s = (char *)s;
-	while (*ptr_s)
+	while (*ptr_s != (unsigned char)c)
 	{
-		if (*ptr_s == (char)c)
+		if (*ptr_s == '\0')
 		{
-			return (ptr_s);
+			return (NULL);
 		}
 		ptr_s++;
 	}
-	if (c == 0)
-		return (ptr_s);
-	return (0);
+	return (ptr_s);
 }
-/* 
+/*
+#include <string.h>
+#include <stdio.h>
+
 int main () {
 	const char str[] = "Hello.Hive.Five";
 	const char ch = '.';
@@ -38,8 +39,8 @@ int main () {
 	char *result, *result2, *result3;
 	char *result4, *result5, *result6;
 
-	result = strchr(str, ch);
-	result2 = ft_strchr(str, ch);
+	result = strchr(str, 1024);
+	result2 = ft_strchr(str, 1024);
 
 	printf("String after orig |%c| is - |%s|\n", ch, result);
 	printf("String after mine |%c| is - |%s|\n", ch, result2);

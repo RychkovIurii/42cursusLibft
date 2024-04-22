@@ -6,7 +6,7 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 10:12:29 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/18 10:41:56 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/22 22:05:15 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,18 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*ptr_s;
 	int		s_len;
 
-	ptr_s = (char *)s;
 	s_len = ft_strlen(s);
-	ptr_s += s_len - 1;
-	if (c == 0)
-		return (ptr_s + 1);
-	while (*ptr_s)
+	while (s_len >= 0)
 	{
-		if (*ptr_s == (char)c)
+		if (s[s_len] == (char)c)
 		{
-			return (ptr_s);
+			return ((char *)(s + s_len));
 		}
-		ptr_s--;
+		s_len--;
 	}
-	return (0);
+	return (NULL);
 }
 /* 
 int main () 
