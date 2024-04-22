@@ -6,7 +6,7 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 15:35:21 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/21 16:45:15 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/22 17:16:29 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_digits_len(int n)
 	i = 0;
 	if (n == -2147483648)
 		return (11);
-	else if (n < 0)
+	else if (n <= 0)
 	{
 		i++;
 		n = -n;
@@ -29,21 +29,11 @@ static int	ft_digits_len(int n)
 		n = n / 10;
 		i++;
 	}
-	//printf("%d\n", i);
 	return (i);
 }
 
-char	*ft_itoa(int n)
+static char	*ft_helper(int n, int len, int i, char *result)
 {
-	int		i;
-	int		len;
-	char	*result;
-
-	i = 0;
-	len = ft_digits_len(n);
-	result = (char *)malloc(sizeof(char) * (len + 1));
-	if (!result)
-		return (NULL);
 	if (n == -2147483648)
 	{
 		ft_strlcpy(result, "-2147483648", 12);
@@ -63,6 +53,18 @@ char	*ft_itoa(int n)
 	return (result);
 }
 
+char	*ft_itoa(int n)
+{
+	int		i;
+	int		len;
+	char	*result;
+
+	i = 0;
+	len = ft_digits_len(n);
+	result = (char *)malloc(sizeof(char) * (len + 1));
+	return (ft_helper(n, len, i, result));
+}
+/* 
 int	main(void)
 {
 	ft_digits_len(-11);
@@ -79,4 +81,4 @@ int	main(void)
 	printf("%s\n", ft_itoa(-2147483648));
 
 	return (0);
-}
+} */
