@@ -6,7 +6,7 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 14:39:01 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/17 18:07:15 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/22 18:07:48 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char	*temp_dst;
 	unsigned char	*temp_src;
 
+	if (!dst || !src)
+		return (NULL);
 	temp_src = (unsigned char *)src;
 	temp_dst = (unsigned char *)dst;
 	while (n > 0)
