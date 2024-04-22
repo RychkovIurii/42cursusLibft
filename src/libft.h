@@ -6,7 +6,7 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 13:39:37 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/22 12:27:51 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/22 13:20:19 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memset(void *b, int c, size_t len);
 void 	ft_putchar_fd(char c, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putstr_fd(char *s, int fd);
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
