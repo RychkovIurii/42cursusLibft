@@ -6,7 +6,7 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 15:03:50 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/18 09:40:43 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/22 17:34:11 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*ptr_s;
-	size_t 			i;
+	size_t			i;
 
 	i = 0;
 	ptr_s = (unsigned char *)s;

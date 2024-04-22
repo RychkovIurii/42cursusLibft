@@ -6,7 +6,7 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 23:05:30 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/18 00:22:30 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/22 16:46:32 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int main() {
     size_t result;
 	size_t result2;
 
-    // Test case 1: Testing with destination size greater than concatenated string length
+ Destination size greater than concatenated string length
     result = ft_strlcat(dest, src, sizeof(dest));
 	result2 = strlcat(dest_m, src, sizeof(dest_m));
     printf("Result 1: %zu\n", result);
@@ -47,7 +47,7 @@ int main() {
 	printf("Result 1: %zu\n", result2);
     printf("Destination 1: %s\n", dest_m);
 
-    // Test case 2: Testing with destination size smaller than concatenated string length
+ Destination size smaller than concatenated string length
     char dest2[5] = "Hi ";
 	char dest2_m[5] = "Hi ";
     result = ft_strlcat(dest2, src, sizeof(dest2));
@@ -67,7 +67,7 @@ int main() {
 	printf("Result 3: %zu\n", result2);
     printf("Destination 3: %s\n", dest3_m);
 
-	// Test case 4: Testing with destination size less than length of destination string
+ Destination size less than length of destination string
 	char dest4[5] = "Hi ";
 	char dest4_m[5] = "Hi ";
 	result = ft_strlcat(dest4, src, 3);

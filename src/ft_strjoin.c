@@ -6,7 +6,7 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 15:12:40 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/19 15:41:59 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/22 16:47:56 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strlcat(str, s2, total_len);
 	return (str);
 }
-
+/* 
 int main(void)
 {
 	char *result;
@@ -38,4 +38,4 @@ int main(void)
 	puts(result);
 	free (result);
 	return 0;
-}
+} */

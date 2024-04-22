@@ -6,7 +6,7 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 11:17:38 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/19 09:32:19 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/22 17:41:26 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	char	*ptr_haystack;
-	size_t len_needle;
-	size_t steps;
-	size_t i;
+	size_t	len_needle;
+	size_t	steps;
+	size_t	i;
 
 	i = 0;
 	steps = 0;
@@ -29,8 +29,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	len_needle = ft_strlen(needle);
 	while (*ptr_haystack && steps <= len - len_needle)
 	{
-		while (ptr_haystack[i] == needle[i] && ptr_haystack[i] && needle[i] 
-				&& i < len)
+		while (ptr_haystack[i] == needle[i] && ptr_haystack[i] && needle[i]
+			&& i < len)
 			i++;
 		if (needle[i] == '\0')
 			return (ptr_haystack);
@@ -40,7 +40,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (0);
 }
-
+/* 
 int main () {
 	char haystack[20] = "Hello.Hive.Fivy";
 	char haystack2[20] = "\0";
@@ -103,4 +103,4 @@ int main () {
 	printf("The substring is: %s\n", result7);
 	printf("The substring is: %s\n\n", result8);
 	return(0);
-}
+} */

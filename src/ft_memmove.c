@@ -6,7 +6,7 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 15:04:48 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/17 17:26:34 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/22 17:31:58 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		ft_memcpy(dst, src, len);
 	return (dst);
 }
-
+/* 
 int main () {
 
 	char src[] = "Hello, World!";
@@ -53,18 +53,18 @@ int main () {
 	printf("Copied string: %s\n", dest2);
 
 	// Test case 2: Overlapping memory regions (source before destination)
-	printf("Test case 2: Overlapping memory regions (source before destination)\n");
+	printf("Overlapping memory regions (source before destination)\n");
 	memmove(dest + 2, dest, strlen(dest) + 1);
 	printf("Copied string: %s\n", dest);
 	ft_memmove(dest2 + 2, dest2, strlen(dest2) + 1);
 	printf("Copied string: %s\n", dest2);
 
 	// Test case 3: Overlapping memory regions (destination before source)
-	printf("Test case 3: Overlapping memory regions (destination before source)\n");
+	printf("Overlapping memory regions (destination before source)\n");
 	memmove(dest, dest + 2, strlen(dest) + 1);
 	printf("Copied string: %s\n", dest);
 	ft_memmove(dest2, dest2 + 2, strlen(dest2) + 1);
 	printf("Copied string: %s\n", dest2);
 
 	return(0);
-}
+} */
