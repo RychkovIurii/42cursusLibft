@@ -6,7 +6,7 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 15:35:21 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/22 17:16:29 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/22 18:06:05 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ static char	*ft_helper(int n, int len, int i, char *result)
 		result[i++] = '-';
 		n = -n;
 	}
+	result[len] = '\0';
 	while (len > i)
 	{
 		len--;
@@ -62,6 +63,8 @@ char	*ft_itoa(int n)
 	i = 0;
 	len = ft_digits_len(n);
 	result = (char *)malloc(sizeof(char) * (len + 1));
+	if (!result)
+		return (NULL);
 	return (ft_helper(n, len, i, result));
 }
 /* 
