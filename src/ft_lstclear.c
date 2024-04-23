@@ -6,7 +6,7 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 14:17:37 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/23 17:02:43 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/23 21:15:47 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 		while (ptr != NULL)
 		{
 			tmp = ptr->next;
-			del(ptr->content);
-			free(ptr);
+			ft_lstdelone(ptr, del);
 			ptr = tmp;
 		}
 		*lst = NULL;
