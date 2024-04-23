@@ -6,7 +6,7 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 13:47:16 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/23 21:47:45 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/23 23:15:29 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	if (lst == NULL || new == NULL)
 		return ;
-	new->next = NULL;
 	if (*lst == NULL)
 		*lst = new;
 	else
