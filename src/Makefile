@@ -6,41 +6,45 @@
 #    By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/22 16:29:24 by irychkov          #+#    #+#              #
-#    Updated: 2024/04/22 17:43:43 by irychkov         ###   ########.fr        #
+#    Updated: 2024/04/23 17:51:39 by irychkov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC		= ./ft_atoi.c ./ft_bzero.c ./ft_calloc.c ./ft_isalnum.c ./ft_isalpha.c ./ft_isascii.c ./ft_isdigit.c ./ft_isprint.c ./ft_itoa.c ./ft_memchr.c ./ft_memcmp.c ./ft_memcpy.c ./ft_memmove.c ./ft_memset.c ./ft_putchar_fd.c ./ft_putendl_fd.c ./ft_putnbr_fd.c ./ft_putstr_fd.c ./ft_split.c ./ft_strchr.c ./ft_strdup.c ./ft_striteri.c ./ft_strjoin.c ./ft_strlcat.c ./ft_strlcpy.c ./ft_strlen.c ./ft_strmapi.c ./ft_strncmp.c ./ft_strnstr.c ./ft_strrchr.c ./ft_strtrim.c ./ft_substr.c ./ft_tolower.c ./ft_toupper.c
+SRC			= ./ft_atoi.c ./ft_bzero.c ./ft_calloc.c ./ft_isalnum.c ./ft_isalpha.c ./ft_isascii.c ./ft_isdigit.c ./ft_isprint.c ./ft_itoa.c ./ft_memchr.c ./ft_memcmp.c ./ft_memcpy.c ./ft_memmove.c ./ft_memset.c ./ft_putchar_fd.c ./ft_putendl_fd.c ./ft_putnbr_fd.c ./ft_putstr_fd.c ./ft_split.c ./ft_strchr.c ./ft_strdup.c ./ft_striteri.c ./ft_strjoin.c ./ft_strlcat.c ./ft_strlcpy.c ./ft_strlen.c ./ft_strmapi.c ./ft_strncmp.c ./ft_strnstr.c ./ft_strrchr.c ./ft_strtrim.c ./ft_substr.c ./ft_tolower.c ./ft_toupper.c
 
-OBJS	= ${SRC:.c=.o}
+BONUS_SRCS 	= ./ft_lstadd_back.c ./ft_lstadd_front.c ./ft_lstclear.c ./ft_lstdelone.c ./ft_lstiter.c ./ft_lstlast.c ./ft_lstmap.c ./ft_lstnew.c ./ft_lstsize.c
 
-HEAD	= ./libft.h
+OBJS		= $(SRC:.c=.o)
 
-NAME	= libft.a
+BONUS_OBJS 	= $(BONUS_SRCS:.c=.o)
 
-AR		= ar rc
+HEAD		= ./libft.h
 
-LIB		= ranlib
+NAME		= libft.a
 
-CC		= cc
+AR			= ar rcs
 
-CFLAGS	= -Wall -Wextra -Werror
+CC			= cc
 
-all:	${NAME}
+CFLAGS		= -Wall -Wextra -Werror
+
+all:		$(NAME)
 
 .c.o:	
-	${CC} ${CFLAGS} -c -I ${HEAD} $< -o ${<:.c=.o}
+			$(CC) $(CFLAGS) -c -I $(HEAD) $< -o $@
 
-${NAME}:	${OBJS}
-			${AR} ${NAME} ${OBJS}
-			${LIB} ${NAME}
+$(NAME):	$(OBJS)
+			$(AR) $(NAME) $(OBJS)
+
+bonus:		$(OBJS) $(BONUS_OBJS)
+			$(AR) $(NAME) $(OBJS) $(BONUS_OBJS)
 
 clean:	
-	rm -f ${OBJS}
+			rm -f $(OBJS) $(BONUS_OBJS)
 
-fclean:	clean
-		rm -f ${NAME}
+fclean:		clean
+			rm -f $(NAME)
 
-re:		fclean all
+re:			fclean all
 
-.PHONY:	all clean fclean re
+.PHONY:	all clean fclean re bonus
