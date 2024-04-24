@@ -6,7 +6,7 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 14:21:17 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/23 23:08:45 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/24 18:55:14 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		if (!temp)
 		{
 			ft_lstclear(&newlist, del);
-			if (handle_f)
-				free(handle_f);
+			del(handle_f);
 			return (NULL);
 		}
 		ft_lstadd_back(&newlist, temp);
