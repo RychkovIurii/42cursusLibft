@@ -6,7 +6,7 @@
 #    By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/22 16:29:24 by irychkov          #+#    #+#              #
-#    Updated: 2024/04/24 12:33:14 by irychkov         ###   ########.fr        #
+#    Updated: 2024/04/25 12:44:14 by irychkov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,10 @@ SRC			= ./ft_atoi.c ./ft_bzero.c ./ft_calloc.c ./ft_isalnum.c \
 			./ft_strnstr.c ./ft_strrchr.c ./ft_strtrim.c ./ft_substr.c \
 			./ft_tolower.c ./ft_toupper.c
 
-BONUS_SRCS 	= ./ft_lstadd_back.c ./ft_lstadd_front.c ./ft_lstclear.c \
-			./ft_lstdelone.c ./ft_lstiter.c ./ft_lstlast.c ./ft_lstmap.c \
-			./ft_lstnew.c ./ft_lstsize.c
+BONUS_SRCS 	= ./ft_lstadd_back_bonus.c ./ft_lstadd_front_bonus.c \
+			./ft_lstclear_bonus.c ./ft_lstdelone_bonus.c ./ft_lstiter_bonus.c \
+			./ft_lstlast_bonus.c ./ft_lstmap_bonus.c ./ft_lstnew_bonus.c \
+			./ft_lstsize_bonus.c
 
 OBJS		= $(SRC:.c=.o)
 
@@ -46,13 +47,14 @@ all:		$(NAME)
 $(NAME):	$(OBJS)
 			$(AR) $(NAME) $(OBJS)
 
-$(NAME)($(BONUS_OBJS)):		$(OBJS) $(BONUS_OBJS)
-			$(AR) $(NAME) $(OBJS) $(BONUS_OBJS)
+bonus : 	.bonus
 
-bonus: $(NAME)($(BONUS_OBJS))
+.bonus : 	$(OBJS) $(BONUS_OBJS)
+			@touch .bonus;
+			$(AR) $(NAME) $(BONUS_OBJS)
 
 clean:	
-			rm -f $(OBJS) $(BONUS_OBJS)
+			rm -f $(OBJS) $(BONUS_OBJS) .bonus
 
 fclean:		clean
 			rm -f $(NAME)
