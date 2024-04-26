@@ -6,7 +6,7 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:31:54 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/22 21:49:17 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/26 16:17:55 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,17 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*b;
-	void	*result;
+	size_t	total;
 
-	b = (void *)malloc(size * count);
-	if (!b)
+	total = count * size;
+	if (count > 0 && size > 0 && (count > ((~(unsigned int)0) / size)))
 		return (NULL);
-	result = ft_memset(b, 0, count * size);
-	return (result);
+	b = (void *)malloc(total);
+	if (b)
+		ft_bzero(b, total);
+	return (b);
 }
+
 /* 
 int main () {
 	int i, n;
