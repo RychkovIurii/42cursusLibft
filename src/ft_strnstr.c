@@ -6,7 +6,7 @@
 /*   By: irychkov <irychkov@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 11:17:38 by irychkov          #+#    #+#             */
-/*   Updated: 2024/04/22 17:41:26 by irychkov         ###   ########.fr       */
+/*   Updated: 2024/04/29 17:46:32 by irychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	len_needle = ft_strlen(needle);
 	while (*ptr_haystack && steps <= len - len_needle)
 	{
-		while (ptr_haystack[i] == needle[i] && ptr_haystack[i] && needle[i]
-			&& i < len)
+		while (i < len && ptr_haystack[i] == needle[i] && ptr_haystack[i]
+			&& needle[i])
 			i++;
 		if (needle[i] == '\0')
 			return (ptr_haystack);
